@@ -12,11 +12,12 @@ describe('DataDrivenSuite', function() {
     it('dataDriven', function() {
         cy.visit('https://qaclickacademy.github.io/protocommerce/')
         cy.get("div[class='form-group'] input[name='name']").type(this.data.name)
+            //cy.pause() //Debugging or we can supply at end like 
+            //cy.get("#exampleFormControlSelect1").select(this.data.gender).pause()
         cy.get("#exampleFormControlSelect1").select(this.data.gender)
         cy.get(":nth-child(4) > .ng-untouched").should('have.value', this.data.name)
         cy.get("div[class='form-group'] input[name='name']").should('have.attr', 'minlength', '2')
         cy.get("#inlineRadio3").should('be.disabled')
 
     })
-
 })

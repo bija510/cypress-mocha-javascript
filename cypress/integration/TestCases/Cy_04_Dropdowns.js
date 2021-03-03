@@ -23,10 +23,12 @@ describe('dropDowns', function() {
         cy.get(".ui-menu-item div").each(($ddlLabel, index, $list) => {
 
             if ($ddlLabel.text() == "India") {
-                $ddlLabel.click()
+                cy.wrap($ddlLabel).click()
             }
+        }).then(function() { // handeling promise so it will run after this step otherwise randdamly run 
+            cy.get('#autocomplete').should('have.value', 'India')
         })
-        cy.get('#autocomplete').should('have.value', 'India')
+
     })
 
 

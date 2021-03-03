@@ -1,4 +1,6 @@
 {
 
+    "defaultCommandTimeout": 20000,
+    "pageLoadTimeout": 4000,
     "experimentalStudio": true
 }
