@@ -1,6 +1,12 @@
 {
-
     "defaultCommandTimeout": 20000,
-    "pageLoadTimeout": 4000,
-    "experimentalStudio": true
+    "pageLoadTimeout": 30000,
+    "experimentalStudio": true,
+    "reporter": "mochawesome",
+
+    "env": {
+        "url": "https://qaclickacademy.github.io"
+
+    },
+    "projectId": "w4cmd4"
 }

@@ -1,0 +1,99 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-05T04:48:35.423Z",
+    "end": "2021-03-05T04:48:44.560Z",
+    "duration": 9137,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8c56e293-3f38-49bc-ac52-ce49eaca00e5",
+      "title": "",
+      "fullFile": "cypress\\integration\\TestCases\\Cy_18_PageObjectDesignTest.js",
+      "file": "cypress\\integration\\TestCases\\Cy_18_PageObjectDesignTest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "58afd72c-d28b-4a6c-b441-e30d4bbe5b1c",
+          "title": "DataDrivenSuite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "dataDriven",
+              "fullTitle": "DataDrivenSuite dataDriven",
+              "timedOut": null,
+              "duration": 7636,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var homePage = new _Home_Page[\"default\"]();\ncy.visit('https://qaclickacademy.github.io/protocommerce/');\nhomePage.getName_txt().type(this.data.name);\nhomePage.getGender_ddl().select(this.data.gender);\nhomePage.getTwoWayBindind_txt().should('have.value', this.data.name);\nhomePage.getName_txt().should('have.attr', 'minlength', '2');\nhomePage.getEntrepreneur_rad().should('be.disabled');\nhomePage.getShop_Btn().click();\nthis.data.productName.forEach(function (element) {\n  cy.selectProduct(element); //parameterize test with multiple set of data array from JSON file\n});\nvar shopPage = new _Shop_Page[\"default\"]();\nshopPage.getCheckOut_btn().click();\nvar checkoutPage = new _Checkout_Page[\"default\"]();\ncheckoutPage.getCheckout_btn().click();\n/*==================================================================================================\n1. Now we need to go to cypress.json and add  \"defaultCommandTimeout\": 10000, this\n2. By default timeout is 4sec now we have change to 10Sec & \n3. Make sure by going to cypressDashboard and setting/configuration==> defaultCommandTimeout\": 10000 is there\n ===================================================================================================*/\ncheckoutPage.getDeliveryLocationSearch_txt().type('in'); //this take 8-10 sec to load\ncheckoutPage.getDynamicSearchDropdownLabel_ddl().each(function ($el, index, $list) {\n  cy.log($el.text());\n  if ($el.text() == \"India\") {\n    cy.wrap($el).click();\n  }\n}).then(function () {\n  checkoutPage.getDeliveryLocationSearch_txt().should('have.value', \"India\");\n});\ncheckoutPage.getIAgree_chx().click({\n  force: true\n}); //We are forcing click because cannot click it was overlap by another element\ncheckoutPage.getPurchase_btn().click();\ncheckoutPage.getAlertMsg().then(function (text_alertElement) {\n  var actualText = text_alertElement.text();\n  expect(actualText.includes(\"Success\")).to.be[\"true\"];\n});",
+              "err": {},
+              "uuid": "ddf192ae-39b2-40f3-a1c2-ce4b7f4ea210",
+              "parentUUID": "58afd72c-d28b-4a6c-b441-e30d4bbe5b1c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ddf192ae-39b2-40f3-a1c2-ce4b7f4ea210"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7636,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": null,
+      "version": "4.1.0"
+    }
+  }
+}

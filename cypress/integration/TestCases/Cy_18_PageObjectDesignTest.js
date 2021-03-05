@@ -1,8 +1,8 @@
 /// <reference types = "Cypress" />
 
-import CheckoutPage from '../PageObjects/Checkout_Page'
-import HomePage from '../PageObjects/Home_Page'
-import ShopPage from '../PageObjects/Shop_Page'
+import CheckoutPage from '../../support/PageObjects/Checkout_Page'
+import HomePage from '../../support/PageObjects/Home_Page'
+import ShopPage from '../../support/PageObjects/Shop_Page'
 
 describe('DataDrivenSuite', function() {
     before(function() {

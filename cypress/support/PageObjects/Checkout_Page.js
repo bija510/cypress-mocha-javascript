@@ -20,6 +20,13 @@
      getAlertMsg() {
          return cy.get('.alert')
      }
+
+     getCheckOutBtn() {
+         return cy.get('#navbarResponsive > .navbar-nav > .nav-item > .nav-link')
+     }
+     getCheckoutItemPriceCommonLocator() {
+         return cy.get('tr td:nth-child(4) strong')
+     }
  }
 
  export default CheckoutPage;
