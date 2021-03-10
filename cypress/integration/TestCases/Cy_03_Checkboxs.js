@@ -4,6 +4,7 @@ describe('check_checkbox', function() {
 
     beforeEach('setUp', function() {
         cy.visit('https://www.rahulshettyacademy.com/AutomationPractice/');
+        //cy.visit("http://demo.automationtesting.in/Register.html")
 
     })
 
@@ -15,8 +16,8 @@ describe('check_checkbox', function() {
     })
 
     it('check_multiple_checkbox', function() {
-        cy.get("input[type='checkbox']").check(['option2', 'option3']) // value= option1
-
+        cy.get("input[type='checkbox']").check(['option2', 'option3']) // value= option1 // css= commonCss
+            //cy.get('[id*="checkbox"]').check(['Cricket', 'Movies', 'Hockey']).should('be.checked')
     })
 
 
