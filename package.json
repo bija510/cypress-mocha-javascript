@@ -4,8 +4,14 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "node_modules\\.bin\\cypress run",
+        "headTest": "npm run test -- --headed",
+        "chromeTest": "npm run test -- -- browser chrome",
+        "recordDashBoardTest": "npm run test -- --record --key 6605097d-f0a9-4f12-bf8e-b53f5fd393b8 --reporter mochawesome",
+        "multipleTest": "npm run test -- --spec \"cypress/integration/TestCases/01first_spec.js,cypress/integration/TestCases/Cy_02_Print_GetText.js\"",
+        "runFolderTest": "npm run test -- --spec \"cypress/integration/runtsdemo/*\""
     },
+
     "author": "Bija",
     "license": "ISC",
     "devDependencies": {

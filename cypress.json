@@ -8,5 +8,10 @@
         "url": "https://qaclickacademy.github.io"
 
     },
+
+    "retries": {
+        "runMode": 1
+    },
+
     "projectId": "w4cmd4"
 }
