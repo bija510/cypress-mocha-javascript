@@ -20,9 +20,7 @@ describe("PrintAndGetTextSuite", function() {
 
     });
 
-    /* === Test Created with Cypress Studio === */
     it('RecordDemoProtoCommmerce', function() {
-        /* ==== Generated with Cypress Studio ==== */
         cy.visit('https://qaclickacademy.github.io/protocommerce/');
         cy.get(':nth-child(1) > .form-control').type('David');
         cy.get(':nth-child(2) > .form-control').type('david@gmail.com');
@@ -31,7 +29,6 @@ describe("PrintAndGetTextSuite", function() {
         cy.get('#exampleFormControlSelect1').select('Female');
         // cy.get(':nth-child(8) > .form-control').type('11122020');
         cy.contains('Submit').click(); // clicking the Submit btn
-        /* ==== End Cypress Studio ==== */
     });
 
 
