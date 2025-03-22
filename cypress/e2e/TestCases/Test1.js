@@ -23,6 +23,7 @@ describe('first Test Suite', function() {
     it('first Test case', function() {
 
         cy.visit('https://example.cypress.io/commands/actions')
+
     })
 
 })
