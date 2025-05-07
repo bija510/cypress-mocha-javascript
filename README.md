@@ -4,15 +4,68 @@
 
 Cypress is a modern JavaScript-based end-to-end testing framework designed for fast, easy, and reliable testing of web applications. This document provides guidelines for setting up and using Cypress for automation testing.
 
+## 📘 JavaScript Naming Conventions Cheat Sheet
+
+This cheat sheet provides a quick reference to standard naming conventions in JavaScript to help maintain clean and consistent code.
+
+### 🔠 Naming Conventions Table
+
+| **Element**        | **Convention** | **Example**                  |
+|--------------------|----------------|------------------------------|
+| File Name          | `kebab-case`   | `user-profile.js`            |
+| Component File     | `PascalCase`   | `UserProfile.js`             |
+| Function Name      | `camelCase`    | `getUserInfo()`              |
+| Variable Name      | `camelCase`    | `userEmail`                  |
+| Class Name         | `PascalCase`   | `AuthService`                |
+| Constant Name      | `UPPER_CASE`   | `MAX_RETRIES`                |
+| Boolean Name       | `camelCase`    | `isLoggedIn`, `hasAccess`    |
+
+### ✅ Summary
+
+- Use **kebab-case** for regular `.js` file names.
+- Use **PascalCase** for files that export components or classes.
+- Use **camelCase** for variables, functions, and booleans.
+- Use **UPPER_CASE** for constants that should not change.
+
 ## Prerequisites
 
 Ensure you have the following installed before proceeding:
 
+- scoop (alternative for window like homebrew)
 - Node.js (LTS version recommended)
 - npm or yarn
 - A code editor (e.g., Visual Studio Code)
 
-## Installation
+## Step 1: Install Scoop
+To install scoop open the powershell in window
+```sh
+irm get.scoop.sh | iex
+```
+After installation, close and reopen PowerShell, then run:
+```sh
+scoop help
+```
+
+## Step 2: Install Node.js
+```sh
+scoop install nodejs
+```
+
+To confirm Node.js and npm were installed correctly:
+- npm :- used to install, update, and manage JavaScript libraries or tools.
+- npx :- npx lets you run Node.js packages without installing them globally.
+```sh
+node -v
+npm -v
+npx -v
+```
+
+To update the Node.js
+```sh
+scoop update nodejs
+```
+
+## Step 3: Install Cypress
 
 To install Cypress, navigate to your project directory and run:
 
@@ -22,6 +75,10 @@ npm install cypress --save-dev
 Or to when we suspect it is corrupted, incomplete, or you want to ensure you have the latest version.
 ```sh
 npx cypress install --force
+```
+If vulnerabilities 
+```sh
+npm audit fix --force
 ```
 ## Opening Cypress
 
@@ -91,6 +148,8 @@ Or
 
 ```sh
 npx cypress run --headed
+npx cypress run --spec cypress/e2e/page-tests/sign-up-test.js --headed
+npx cypress run --spec cypress/e2e/page-tests/sum-of-product-function.js --headed
 ```
 For integration with CI/CD pipelines, refer to Cypress documentation on CI setup.
 
@@ -101,10 +160,14 @@ npx cypress run --browser chrome
 ## Run tests in a specific spec file:
 ```sh
 npx cypress run --spec cypress/e2e/test.spec.js
+npx cypress run --spec cypress/e2e/page-tests/sign-up-test.js --headed
+npx cypress run --spec cypress/e2e/page-tests/sum-of-product-function.js --headed
 ```
 ## Run tests with environment variables:
 ```sh
 npx cypress run --env username=admin,password=1234
+node_modules/.bin/cypress run --spec cypress/e2e/test-cases/21-run-from-cmd.js --env url=https://www.google.com/ --headed
+npx cypress run --spec cypress/e2e/test-cases/21-run-from-cmd.js --env url=https://www.google.com/ --headed
 ```
 ## Run tests in a specific viewport:
 ```sh
@@ -139,6 +202,20 @@ Run tests with reporting:
 ```sh
 npx cypress run --reporter mochawesome
 ```
+> **Note**: Run from the **terminal** to enable automatic screenshot and video capture.
+
+## Screenshots on Failure:
+- Cypress **automatically captures screenshots** on test failure.
+- It **creates a `screenshots/` folder** and saves them there.
+
+## Video Recording:
+- Cypress also **records a video** of the test run.
+- Videos are saved inside the **`videos/` folder**.
+
+## Folder Structure Best Practice:
+- Place `page-objects/` inside the `support/` folder.
+- ⚠️ Do **not** place it in `e2e/` — Cypress will attempt to execute it as a test.
+
 
 ## Best Practices
 

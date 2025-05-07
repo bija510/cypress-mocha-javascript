@@ -1,15 +1,15 @@
 {
   "stats": {
-    "suites": 1,
-    "tests": 2,
-    "passes": 1,
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2025-03-21T20:20:26.850Z",
-    "end": "2025-03-21T20:20:34.741Z",
-    "duration": 7891,
-    "testsRegistered": 2,
-    "passPercent": 50,
+    "start": "2025-05-07T04:54:48.861Z",
+    "end": "2025-05-07T04:54:49.514Z",
+    "duration": 653,
+    "testsRegistered": 1,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,91 +18,52 @@
   },
   "results": [
     {
-      "uuid": "bdf36bab-f4f0-40fd-8842-7e6578e3644e",
+      "uuid": "78c34c30-f1b9-4b3b-9794-5ade22a2f7f3",
       "title": "",
-      "fullFile": "cypress\\e2e\\runtsdemo\\test2.js",
-      "file": "cypress\\e2e\\runtsdemo\\test2.js",
+      "fullFile": "cypress\\e2e\\page-tests\\sign-up-test.js",
+      "file": "cypress\\e2e\\page-tests\\sign-up-test.js",
       "beforeHooks": [],
       "afterHooks": [],
-      "tests": [],
-      "suites": [
+      "tests": [
         {
-          "uuid": "ca09ba22-f187-4d27-b16a-229e47114e91",
-          "title": "PrintAndGetTextSuite",
-          "fullFile": "",
-          "file": "",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "test_spec",
-              "fullTitle": "PrintAndGetTextSuite test_spec",
-              "timedOut": null,
-              "duration": 1116,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": null,
-              "code": "cy.visit('http://demo.automationtesting.in/Register.html');\ncy.get('h1').as('pageHeader_lbl');\ncy.get('@pageHeader_lbl').then(function (headerlbl) {\n  const headerText = headerlbl.text(); //Storing in variable & test() method is jquery so we need to resolve promise by then(function..)\n  cy.log(headerText); // or will print in the cypress dashboard console\n  console.log(headerText); //will print in dev tool console\n});\ncy.get('@pageHeader_lbl').should('have.text', 'Automation Demo Site ');",
-              "err": {
-                "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > angular is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
-                "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > angular is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at <unknown> (https://demo.automationtesting.in/angcontroller.js:6:9)",
-                "diff": null
-              },
-              "uuid": "d2bdd840-da98-42d9-94cd-e762bddf883f",
-              "parentUUID": "ca09ba22-f187-4d27-b16a-229e47114e91",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "RecordDemoProtoCommmerce",
-              "fullTitle": "PrintAndGetTextSuite RecordDemoProtoCommmerce",
-              "timedOut": null,
-              "duration": 1483,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "cy.visit('https://qaclickacademy.github.io/protocommerce/');\ncy.get(':nth-child(1) > .form-control').type('David');\ncy.get(':nth-child(2) > .form-control').type('david@gmail.com');\ncy.get('#exampleInputPassword1').type('abc123');\ncy.get('#exampleCheck1').check();\ncy.get('#exampleFormControlSelect1').select('Female');\n// cy.get(':nth-child(8) > .form-control').type('11122020');\ncy.contains('Submit').click(); // clicking the Submit btn",
-              "err": {},
-              "uuid": "33ab2ee1-64bd-47ff-ab4f-096f9308ee76",
-              "parentUUID": "ca09ba22-f187-4d27-b16a-229e47114e91",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "33ab2ee1-64bd-47ff-ab4f-096f9308ee76"
-          ],
-          "failures": [
-            "d2bdd840-da98-42d9-94cd-e762bddf883f"
-          ],
-          "pending": [],
-          "skipped": [],
-          "duration": 2599,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
+          "title": "An uncaught error was detected outside of a test",
+          "fullTitle": "An uncaught error was detected outside of a test",
+          "timedOut": null,
+          "duration": 279,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "throw err;",
+          "err": {
+            "message": "CypressError: The following error originated from your test code, not from Cypress.\n\n  > Cannot call `cy.pause()` outside a running test.\n\nThis usually happens when you accidentally write commands outside an `it(...)` test.\n\nIf that is the case, just move these commands inside an `it(...)` test.\n\nCheck your test file for errors.\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n\nhttps://on.cypress.io/cannot-execute-commands-outside-test",
+            "estack": "CypressError: The following error originated from your test code, not from Cypress.\n\n  > Cannot call `cy.pause()` outside a running test.\n\nThis usually happens when you accidentally write commands outside an `it(...)` test.\n\nIf that is the case, just move these commands inside an `it(...)` test.\n\nCheck your test file for errors.\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n\nhttps://on.cypress.io/cannot-execute-commands-outside-test\n    at ensureRunnable (http://localhost:64782/__cypress/runner/cypress_runner.js:139710:58)\n    at cy.<computed> [as pause] (http://localhost:64782/__cypress/runner/cypress_runner.js:140291:7)\n    at Suite.eval (webpack://automation/./cypress/e2e/page-tests/sign-up-test.js:60:7)\n    at Object.create (http://localhost:64782/__cypress/runner/cypress_runner.js:163585:19)\n    at context.describe.context.context (http://localhost:64782/__cypress/runner/cypress_runner.js:163272:27)\n    at createRunnable (http://localhost:64782/__cypress/runner/cypress_runner.js:147287:31)\n    at <unknown> (http://localhost:64782/__cypress/runner/cypress_runner.js:147348:14)\n    at eval (webpack://automation/./cypress/e2e/page-tests/sign-up-test.js:7:0)\n    at eval (http://localhost:64782/__cypress/tests?p=cypress\\e2e\\page-tests\\sign-up-test.js:211:3)\n    at eval (http://localhost:64782/__cypress/tests?p=cypress\\e2e\\page-tests\\sign-up-test.js:213:12)\n    at eval (<anonymous>)\n    at <unknown> (http://localhost:64782/__cypress/runner/cypress_runner.js:111945:23)\n    at tryCatcher (http://localhost:64782/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:64782/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:64782/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:64782/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:64782/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:64782/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:64782/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:64782/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:64782/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:64782/__cypress/runner/cypress_runner.js:2370:9)",
+            "diff": null
+          },
+          "uuid": "01edd914-b88b-40b5-a227-fd56fce7d197",
+          "parentUUID": "78c34c30-f1b9-4b3b-9794-5ade22a2f7f3",
+          "isHook": false,
+          "skipped": false
         }
       ],
+      "suites": [],
       "passes": [],
-      "failures": [],
+      "failures": [
+        "01edd914-b88b-40b5-a227-fd56fce7d197"
+      ],
       "pending": [],
       "skipped": [],
-      "duration": 0,
+      "duration": 279,
       "root": true,
-      "rootEmpty": true,
+      "rootEmpty": false,
       "_timeout": 2000
     }
   ],
   "meta": {
     "mocha": {
-      "version": "7.0.1"
+      "version": "7.2.0"
     },
     "mochawesome": {
       "options": {
@@ -111,13 +72,14 @@
         "saveHtml": true,
         "saveJson": true,
         "consoleReporter": "spec",
-        "useInlineDiffs": false
+        "useInlineDiffs": false,
+        "code": true
       },
-      "version": "4.1.0"
+      "version": "7.1.3"
     },
     "marge": {
       "options": null,
-      "version": "4.1.0"
+      "version": "6.2.0"
     }
   }
 }
