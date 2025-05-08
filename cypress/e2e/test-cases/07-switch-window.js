@@ -1,4 +1,4 @@
-/// <reference types = "Cypress" />
+/// <reference types = "cypress" />
 
 /***********************************************************************************
  * Cypress have ability to manuplae the DOM

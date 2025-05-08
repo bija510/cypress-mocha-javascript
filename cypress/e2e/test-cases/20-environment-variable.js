@@ -6,7 +6,7 @@
 2. Cypress.env("url") will give string url
 =================================================================*/
 
-/// <reference types = "Cypress" />
+/// <reference types = "cypress" />
 
 describe('EnvironmentalVariableOrProfile', function() {
 

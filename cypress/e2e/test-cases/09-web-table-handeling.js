@@ -1,4 +1,4 @@
-/// <reference types = "Cypress" />
+/// <reference types = "cypress" />
 
 /***********************************************************************************
  NOTE:- We can traverse to sibling with next() & it work only  on get()

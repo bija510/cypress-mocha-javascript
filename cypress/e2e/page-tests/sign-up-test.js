@@ -1,4 +1,4 @@
-/// <reference types = "Cypress" />
+/// <reference types = "cypress" />
 
 import CheckoutPage from '../../support/page-objects/checkout-page'
 import SignUpPage from '../../support/page-objects/sign-up-page'
@@ -57,10 +57,10 @@ describe('DataDrivenSuite', function() {
 
     })
 
-    after(() => {
-        // runs once after all tests in the block
-        cy.pause() // this will pause the test execution and we can see the result in cypress dashboard
-    })
+    // after(() => {
+    //     // runs once after all tests in the block
+    //     cy.pause() // this will pause the test execution and we can see the result in cypress dashboard
+    // })
 
 })
 

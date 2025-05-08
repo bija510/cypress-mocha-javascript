@@ -5,7 +5,7 @@
  3. Make sure import './commands'; is not commented inside the index.js ==>All set now! 💥
  4. make sure we have type="file" in html dom
  */
-/// <reference types="Cypress"/>
+/// <reference types="cypress"/>
 
 describe('FileUpload', () => {
 

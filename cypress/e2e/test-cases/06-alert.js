@@ -1,10 +1,10 @@
-/// <reference types = "Cypress" />
+/// <reference types = "cypress" />
 
 /*=====================================================================================================
 1. Cypress by default it auto accept any alert and pop up & only focus in parent Window
 2. it doesn't show alert but it log the alert message 
 3. Ideally we don't need to worry about the pop up
-4. Cypress have the capability of browser events. window:alert is the event wich  get fired on alert open
+4. Cypress have the capability of browser events. window:alert is the event which  get fired on alert open
 ========================================================================================================*/
 
 describe('autoHandleALert', function() {

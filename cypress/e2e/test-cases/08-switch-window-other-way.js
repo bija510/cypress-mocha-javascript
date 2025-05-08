@@ -1,4 +1,4 @@
-/// <reference types = "Cypress" />
+/// <reference types = "cypress" />
 
 /*********************************************************************************************************
 1. Cypress don't have method to getAttribute so we use JQuery then()=> Neeed to Resolve promise 

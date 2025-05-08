@@ -2,7 +2,7 @@
  * Window authentication pop up Working exactly as in Selenium
  **************************************************************/
 
-/// <reference types="Cypress"/>
+/// <reference types="cypress"/>
 
 describe('zTemp', () => {
 

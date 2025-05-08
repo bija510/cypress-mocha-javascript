@@ -1,4 +1,4 @@
-/// <reference types = "Cypress" />
+/// <reference types = "cypress" />
 
 /*==================================================================================================
 <=====This 15sec wait is implicit wait will work for all Scripts=====>

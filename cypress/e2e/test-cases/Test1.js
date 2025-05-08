@@ -19,7 +19,7 @@
 ****************************************************************************************************/
 
 
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 describe('first Test Suite', function() {
 
     it('first Test case', function() {

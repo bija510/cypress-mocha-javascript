@@ -1,12 +1,11 @@
-/// <reference types = "Cypress" />
+/// <reference types = "cypress" />
 
-/****************************************************************************************
-Cypress directly not support coz it's flakey(inconstistant) so we need to use JQuery here
-like text(), removeAttribute(), 
-then we have to resolve the promise coz It's JQuery
-Top & Reload are in hidden mode Cypress can click on hidden mode
-//Click hidden element cy.get().click({force:true})
-*****************************************************************************************/
+/*
+* elements, so we use jQuery methods like `text()` and `removeAttr()` to manipulate the DOM.
+* Since jQuery operations return non-Cypress promises, we need to manually resolve them.
+* Note: The "Top" and "Reload" elements are hidden by default. Cypress can still interact with 
+* them using `.click({ force: true })` to bypass visibility restrictions.
+*/
 
 describe('WebTableFunction', function() {
 

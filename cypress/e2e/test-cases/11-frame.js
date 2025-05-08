@@ -1,4 +1,4 @@
-/// <reference types = "Cypress" />
+/// <reference types = "cypress" />
 
 /*=====================================================================================================
 1. Cypress don't have frame support in begnning but now they support

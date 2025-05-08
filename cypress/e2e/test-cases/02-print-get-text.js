@@ -1,9 +1,6 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
-/***************************************************************************
-text() is not cypress command so No promise Resolved but text() is a JQuery
-So we hve to handle and work in this tricky way
-***************************************************************************/
+
 describe("PrintAndGetTextSuite", function() {
     it("test_spec", function() {
 

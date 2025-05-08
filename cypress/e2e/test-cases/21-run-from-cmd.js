@@ -4,7 +4,7 @@
 * npx cypress run --spec cypress/e2e/test-cases/21-run-from-cmd.js --env url=https://www.google.com/ --headed
  */
 
-///<reference types = "Cypress" />
+///<reference types = "cypress" />
 
 describe('RunFromCmd', function() {
 

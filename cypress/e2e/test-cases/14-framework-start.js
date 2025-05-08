@@ -12,6 +12,9 @@
 11.Generate excillent report for Test execution result
 12.Integrate cypress test with Jenkins
 *******************************************************************************/
+
+/// <reference types = "cypress" />
+
 beforeEach(() => {
     // root-level hook
     // runs before every test

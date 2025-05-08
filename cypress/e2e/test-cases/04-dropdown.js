@@ -1,4 +1,4 @@
-/// <reference types = "Cypress" />
+/// <reference types = "cypress" />
 /*========================================================================
 instead of using List<WebElement> eles= driver.findElements(By.xpath(""))
 & Using for loop we can do and perform different action ==BUT in Cypress==>

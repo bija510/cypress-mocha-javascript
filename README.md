@@ -2,7 +2,16 @@
 
 ## Introduction
 
-Cypress is a modern JavaScript-based end-to-end testing framework designed for fast, easy, and reliable testing of web applications. This document provides guidelines for setting up and using Cypress for automation testing.
+- Cypress is a modern JavaScript-based end-to-end testing framework designed for fast, easy, and reliable testing of web applications. This document provides guidelines for setting up and using Cypress for automation testing.
+- Cypress only support css-selector.
+- The `.text()` feature in Cypress is not unique to Cypress itself—it comes from the jQuery API.
+- Promise comes with rejection, resolved , pending `we use then() to solve promise`.
+- Waits for elements to appear without sleep().
+- Screenshots & Videos – Captures test runs for review.
+- Visual test runner to inspect tests step by step.
+- CI/CD Integration – Works with tools like Jenkins, GitHub Actions, etc.
+- Built-in Assertions – No need for third-party libraries.
+- Support for Mocha & Chai – Uses familiar syntax for writing tests.
 
 ## 📘 JavaScript Naming Conventions Cheat Sheet
 
@@ -107,7 +116,8 @@ After running Cypress for the first time, a default folder structure is created:
   ├── screenshots
   ├── support
   ├── videos
-/cypress.config.json
+  ├── cypress.config.json
+  ├── package.json
 ```
 
 - **e2e/**: Contains test scripts.
@@ -116,7 +126,8 @@ After running Cypress for the first time, a default folder structure is created:
 - **support/**: Reusable functions and commands.
 - **videos/**: Stores recorded test runs.
 - **screenshots/**: Captured screenshots from tests.
-- **cypress.json**: Configuration settings.
+- **cypress.config.json**: Configuration settings.
+- **package.json**: Manages a Node.js project's metadata, dependencies, scripts, and configuration, serving as the central hub for defining how the project runs, builds, and interacts with other packages.
 
 ## Writing Your First Test
 

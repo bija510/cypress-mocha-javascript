@@ -1,14 +1,9 @@
-/// <reference types = "Cypress" />
+/// <reference types = "cypress" />
 
-describe('first_Suite', function() {
+describe('first_Suite', function () {
 
-    /*============================================================================
-     1. Cypress Only support CSS-Selector
-     2. We can see what happen on every step with screenshot & error msg in cypress
-     3. Promise comes with rejection, resolved , pending WE USE :- then() to solve promise 
-        in any non cypress command like text() which is JQuery
-    ==============================================================================*/
-    it('fsirst_Method', function() {
+
+    it('fsirst_Method', function () {
         cy.visit("https://naveenautomationlabs.com/opencart/index.php?route=account/register");
         cy.get('#input-firstname').type('David');
 
