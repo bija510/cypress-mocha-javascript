@@ -8,6 +8,6 @@
  * 
  * and if we Manually updated Package.json then we have to do ==> npm install 
  * so all will install
- *  THEN :- npx cypress run --reporter mochawesome --spec cypress\integration\TestCases\Cy_18_PageObjectDesignTest.js
+ *  THEN :- npx cypress run --reporter mochawesome --spec cypress/e2e/test-cases/21-run-from-cmd.js --env url=https://www.google.com/ --headed
  * Then it will create Folder "mochawesome-report" and it will put html report inside this folder 
  *******************************************************************************************************************/

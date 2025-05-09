@@ -202,18 +202,123 @@ Cypress.Commands.add('login', (username, password) => {
 
 ## Reporting
 
-To generate reports, install:
+### A. Install `allure reporter`
+```sh
+npm install --save-dev mocha-allure-reporter allure-commandline --legacy-peer-deps
+```
+
+### B. Add this in the package.json file inside the scripts
+```sh
+"browser:chrome": "cypress run --browser=chrome --headed --spec cypress/e2e/run-demo/*.js --reporter mocha-allure-reporter" ,
+"report:allure": "allure generate allure-results -clean -o allure-report && allure open allure-report",
+```
+
+### C. Run to create a allure-result
+```sh
+npm run browser:chrome 
+```
+
+### D. Optional: Serve Without Opening 
+> This combines generate and open in one command, but doesn't save the report to a directory.
+```sh
+allure serve allure-results
+```
+
+### E. To save & create allure report with .html file
+```sh
+npm run report:allure  
+```
+
+### F. To view the allure report
+```sh
+allure open allure-report  
+```
+
+## To install `mochawesome` & generate reports
 
 ```sh
 npm install --save-dev mochawesome
+npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
 ```
 
 Run tests with reporting:
 
 ```sh
 npx cypress run --reporter mochawesome
+npx cypress run --reporter mochawesome --spec cypress/e2e/page-tests/sum-of-product-function.js --headed
 ```
 > **Note**: Run from the **terminal** to enable automatic screenshot and video capture.
+
+## Cypress Default Behavior
+
+- By default, it runs headless in the Electron browser.
+- The default `package.json` contains:
+
+```json
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
+```
+## To stop a running test suite:
+```sh
+CTRL + C
+```
+```sh
+Terminate batch job (Y/N)?
+Y + ENTER
+```
+## Running Cypress Tests via NPM Scripts `(package.json)`
+```sh
+ "scripts": {
+        "test": "node_modules\\.bin\\cypress run",
+        "multipleTest": "npm run test -- --spec \"cypress/e2e/test-cases/01-click-sendkey.js,cypress/e2e/TestCases/02-print-get-text.js\"",
+        "runFolderTest": "npm run test -- --spec \"cypress/e2e/run-demo/*\""
+        "headTest": "npm run test -- --headed",
+        "chromeTest": "npm run test -- -- browser chrome",
+        "recordDashBoardTest": "npm run test -- --record --key 6605097d-f0a9-4f12-bf8e-b53f5fd393b8 --reporter mochawesome",
+       
+        
+    },
+```
+
+
+### 1. Run all spec files:
+```sh
+npm run test
+```
+
+### 2. Run multiple specific spec files:
+```sh
+npm run multipleTest
+```
+
+### 3. Run a folder of tests:
+```sh
+npm run runFolderTest
+```
+
+### 4. Run in head mode to see the UI:
+```sh
+npm run headTest
+```
+
+### 5. Run in a specific browser (e.g., Chrome):
+```sh
+npm run chromeTest
+```
+
+### 6. Run test in record mode with report & screenshot on failure
+```sh
+npm run recordDashBoardTest
+```
+
+### Auto-Retries for Failing Specs in Cypress
+```sh
+"retries": {
+  "runMode": 1
+}
+
+```
 
 ## Screenshots on Failure:
 - Cypress **automatically captures screenshots** on test failure.

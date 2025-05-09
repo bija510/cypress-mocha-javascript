@@ -5,19 +5,29 @@ module.exports = defineConfig({
   pageLoadTimeout: 30000,
   experimentalStudio: true,
   reporter: 'mochawesome',
+  "reporterOptions": {
+    "reportDir": "cypress/reports",
+    "overwrite": false,
+    "html": false,
+    "json": true
+  },
   env: {
     url: 'https://qaclickacademy.github.io',
+    grepFilterSpecs: true // Enable filtering specs based on grep
   },
   retries: {
     runMode: 1,
   },
   projectId: 'w4cmd4',
-  e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
-    setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config)
-    },
+e2e: {
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
+    setupNodeEvents(on, config) {
+      // Add cypress-grep plugin
+      require('cypress-grep/src/plugin')(config);
+
+      // Load custom plugin and return config (in case it's modified)
+      const maybeModified = require('./cypress/plugins/index.js')(on, config);
+      return maybeModified || config;
+    },
   },
 })

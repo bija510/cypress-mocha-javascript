@@ -14,7 +14,7 @@ describe('DataDrivenSuite', function() {
     it('dataDriven', function() {
         const signUpPage = new SignUpPage()
 
-        cy.visit(Cypress.env('url') + "/protocommerce/") // we are getting environment variable url+ 
+        cy.visit('https://qaclickacademy.github.io/protocommerce/')
 
         signUpPage.getName_txt().type(this.data.name)
         signUpPage.getGender_ddl().select(this.data.gender)
@@ -55,30 +55,7 @@ describe('DataDrivenSuite', function() {
             expect(actualText.includes("Success")).to.be.true
         })
 
-        //==============This test case start from here=================
-        checkoutPage.getCheckOutBtn().click()
-        var sum = 0
-        checkoutPage.getCheckoutItemPriceCommonLocator().each(($el, index, $list) => {
-            const actText = $el.text()
-            var finText = actText.split(" ")
-            finText = finText[1].trim()
-            sum = Number(sum) + Number(finText)
-                //We need to resolve promise so
-        }).then(function() {
-            cy.log(sum)
-        })
-        cy.get('h3 > strong').then(function(totalAmount) {
-            var total = totalAmount.text().split(" ")
-            total = total[1].trim()
-            expect(Number(total)).to.equal(sum)
-        })
-
-
-
     })
 
-    after(() => {
-        // runs once after all tests in the block
-        cy.pause() // this will pause the test execution and we can see the result in cypress dashboard
-    })
 })
+
