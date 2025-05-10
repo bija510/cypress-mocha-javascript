@@ -30,6 +30,23 @@ Cypress is a modern JavaScript-based end-to-end testing framework designed for f
 | CSS Selectors | ✅ Fully supported        | Recommended. Cypress supports all standard CSS selectors.            |
 | XPath         | ⚠️ Plugin required        | Not supported out-of-the-box, but can be added via `cypress-xpath`.  |
 
+### 1. To install cypress-xpath
+```sh
+npm install cypress-xpath 
+```
+Add the require line to the support file:
+
+### 2. For Cypress v10 and later: cypress/support/e2e.js
+```sh
+require('cypress-xpath');
+```
+
+### 3. Add this in the script.cy.js file for auto-completion IntelliSense support
+```sh
+/// <reference types="cypress-xpath" />
+```
+### 4. Done Example: cy.xpath("//input[@id='input-firstname']").type('David');
+
 ## 📘 Cypress-mocha-javascript Naming Conventions Cheat Sheet
 
 This cheat sheet provides a quick reference to standard naming conventions in project to help maintain clean and consistent code.
@@ -68,6 +85,7 @@ Ensure you have the following installed before proceeding:
  "dependencies": {
         "browserstack-cypress-cli": "^1.32.7",
         "cypress-downloadfile": "^1.2.4",
+        "cypress-xpath": "^2.0.1",
         "typescript": "^5.8.3"
     },
     "devDependencies": {
@@ -241,7 +259,7 @@ npm install --save-dev mocha-allure-reporter allure-commandline --legacy-peer-de
 
 #### C. Run to create a allure-result
 ```sh
-npm run browser:chrome 
+npm run test:smoke
 ```
 
 #### D. Optional: Serve Without Opening 

@@ -20,6 +20,7 @@
     "dependencies": {
         "browserstack-cypress-cli": "^1.32.7",
         "cypress-downloadfile": "^1.2.4",
+        "cypress-xpath": "^2.0.1",
         "typescript": "^5.8.3"
     },
     "devDependencies": {

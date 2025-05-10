@@ -17,6 +17,8 @@
 const registerCypressGrep = require('@cypress/grep')
 registerCypressGrep()
 
+require('cypress-xpath');
+
 import './commands'
 
 // Alternatively you can use CommonJS syntax:
