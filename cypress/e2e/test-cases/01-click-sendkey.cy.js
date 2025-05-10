@@ -3,7 +3,7 @@
 describe('first_Suite', function () {
 
 
-    it('fsirst_Method', function () {
+    it('first_Method', function () {
         cy.visit("https://naveenautomationlabs.com/opencart/index.php?route=account/register");
         cy.get('#input-firstname').type('David');
 

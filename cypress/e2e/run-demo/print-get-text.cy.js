@@ -2,7 +2,7 @@
 
 
 describe("PrintAndGetTextSuite", function() {
-    it("test_spec @smoke", function() {
+    it("getPageHeader", function() {
 
         cy.visit('https://naveenautomationlabs.com/opencart/index.php?route=account/register');
 
@@ -18,7 +18,7 @@ describe("PrintAndGetTextSuite", function() {
     });
 
     /* === Test Created with Cypress Studio === */
-    it('RecordDemoProtoCommmerce @smoke', function() {
+    it('enterNameAndEmail @smoke', function() {
         /* ==== Generated with Cypress Studio ==== */
         cy.visit('https://qaclickacademy.github.io/protocommerce/');
         cy.get(':nth-child(1) > .form-control').type('David');

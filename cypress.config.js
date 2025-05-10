@@ -21,10 +21,10 @@ module.exports = defineConfig({
   projectId: 'w4cmd4',
 e2e: {
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
+    supportFile: 'cypress/support/e2e.js',
+   
     setupNodeEvents(on, config) {
-      // Add cypress-grep plugin
-      require('cypress-grep/src/plugin')(config);
-
+       require('@cypress/grep/src/plugin')(config)
       // Load custom plugin and return config (in case it's modified)
       const maybeModified = require('./cypress/plugins/index.js')(on, config);
       return maybeModified || config;
