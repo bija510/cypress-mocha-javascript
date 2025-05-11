@@ -25,7 +25,7 @@ describe('dropDowns', function() {
             if ($ddlLabel.text() == "India") {
                 cy.wrap($ddlLabel).click()
             }
-        }).then(function() { // handeling promise so it will run after this step otherwise randdamly run 
+        }).then(function() { // handeling promise so it will run after this step otherwise randoamly run 
             cy.get('#autocomplete').should('have.value', 'India')
         })
 

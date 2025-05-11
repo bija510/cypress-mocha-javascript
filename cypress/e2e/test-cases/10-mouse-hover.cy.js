@@ -1,6 +1,6 @@
 /// <reference types = "cypress" />
 
-/*
+/**
 * elements, so we use jQuery methods like `text()` and `removeAttr()` to manipulate the DOM.
 * Since jQuery operations return non-Cypress promises, we need to manually resolve them.
 * Note: The "Top" and "Reload" elements are hidden by default. Cypress can still interact with 

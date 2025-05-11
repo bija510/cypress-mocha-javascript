@@ -5,6 +5,8 @@ module.exports = defineConfig({
   pageLoadTimeout: 30000,
   experimentalStudio: true,
   reporter: 'mochawesome',
+  video: true, // ✅ Enable video recording
+  videoCompression: 32, // optional: compress video (0 disables compression)
   "reporterOptions": {
     "reportDir": "cypress/reports",
     "overwrite": false,

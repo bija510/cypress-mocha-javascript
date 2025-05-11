@@ -3,9 +3,9 @@
 2. Data driven testing with fixture
 3. Building custom cypress command
 4. parameterize test with multiple Data sets
-5. Understanding the test debugginh
+5. Understanding the test debugging
 6. Build page object design patten for objects
-7. Configuration change in cypress.json
+7. Configuration change in cypress.config.js
 8. screenshots and video recording for Test
 9. Exploring cypress dashboard
 10.Understanding the environmental variables of cypress

@@ -34,9 +34,9 @@ Cypress is a modern JavaScript-based end-to-end testing framework designed for f
 ```sh
 npm install cypress-xpath 
 ```
-Add the require line to the support file:
 
-### 2. For Cypress v10 and later: cypress/support/e2e.js
+
+### 2. Add the require line For Cypress v10 and later inside: cypress/support/e2e.js
 ```sh
 require('cypress-xpath');
 ```
@@ -45,7 +45,10 @@ require('cypress-xpath');
 ```sh
 /// <reference types="cypress-xpath" />
 ```
-### 4. Done Example: cy.xpath("//input[@id='input-firstname']").type('David');
+### 4. Done Example: 
+```javascript
+cy.xpath("//input[@id='input-firstname']").type('David');
+```
 
 ## 📘 Cypress-mocha-javascript Naming Conventions Cheat Sheet
 
@@ -119,7 +122,7 @@ scoop install nodejs
 ```
 
 To confirm Node.js and npm were installed correctly:
-> pm :- used to install, update, and manage JavaScript libraries or tools.
+> npm :- used to install, update, and manage JavaScript libraries or tools.
 
 > npx :- npx lets you run Node.js packages without installing them globally.
 ```sh
@@ -378,15 +381,19 @@ npm run test:regression
 - It **creates a `screenshots/` folder** and saves them there.
 
 ## Video Recording:
-- Cypress also **records a video** of the test run.
-- Videos are saved inside the **`videos/` folder**.
-
-## Folder Structure Best Practice:
-- Place `page-objects/` inside the `support/` folder.
-- ⚠️ Do **not** place it in `e2e/` — Cypress will attempt to execute it as a test.
+Add this in the `cypress.config.js` file for video recording of run test cases.
+```javascript
+module.exports = defineConfig({
+  video: true, // ✅ Enable video recording
+  videoCompression: 32, // optional: compress video (0 disables compression)
+)}
+```
+Cypress **records a video** of the test run are saved inside the **`videos/` folder**.
 
 ## Page Object Model (POM)
 This project uses the **Page Object Model (POM)** design pattern to organize and maintain test code efficiently.
+- Place `page-objects/` inside the `support/` folder.
+- ⚠️ Do **not** place it in `e2e/` — Cypress will attempt to execute it as a test.
 
 ## Best Practices
 
