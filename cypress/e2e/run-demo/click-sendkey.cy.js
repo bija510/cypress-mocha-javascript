@@ -1,9 +1,9 @@
 /// <reference types = "cypress" />
 
-describe('first_Suite', function () {
+describe('basicActionSuite', function () {
 
 
-    it('first_Method @smoke', function () {
+    it('typeAction @smoke', function () {
         cy.visit("https://naveenautomationlabs.com/opencart/index.php?route=account/register");
         cy.get('#input-firstname').type('David');
 

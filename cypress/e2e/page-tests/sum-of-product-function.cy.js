@@ -4,14 +4,14 @@ import CheckoutPage from '../../support/page-objects/checkout-page'
 import SignUpPage from '../../support/page-objects/sign-up-page'
 import ShopPage from '../../support/page-objects/shop-page'
 
-describe('DataDrivenSuite', function() {
+describe('sumOfProductSuite', function() {
     before(function() {
         cy.fixture('example').then(function(data) {
             this.data = data
         })
     })
 
-    it('dataDriven', function() {
+    it('sumOfProduct', function() {
         const signUpPage = new SignUpPage()
 
         cy.visit(Cypress.env('url') + "/protocommerce/") // we are getting environment variable url+ 

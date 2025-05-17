@@ -19,6 +19,8 @@ registerCypressGrep()
 
 require('cypress-xpath');
 
+import "allure-cypress";
+
 import './commands'
 
 // Alternatively you can use CommonJS syntax:

@@ -4,14 +4,14 @@ import CheckoutPage from '../../support/page-objects/checkout-page'
 import SignUpPage from '../../support/page-objects/sign-up-page'
 import ShopPage from '../../support/page-objects/shop-page'
 
-describe('DataDrivenSuite', function() {
+describe('signUpSuite', function() {
     before(function() {
         cy.fixture('example').then(function(data) {
             this.data = data
         })
     })
 
-    it('dataDriven', function() {
+    it('signUp', function() {
         const signUpPage = new SignUpPage()
 
         cy.visit('https://qaclickacademy.github.io/protocommerce/')

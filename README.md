@@ -388,7 +388,7 @@ module.exports = defineConfig({
   videoCompression: 32, // optional: compress video (0 disables compression)
 )}
 ```
-Cypress **records a video** of the test run are saved inside the **`videos/` folder**.
+Cypress with only this setting `records a video automatically` & save in the **`videos/` folder**.
 
 ## Page Object Model (POM)
 This project uses the **Page Object Model (POM)** design pattern to organize and maintain test code efficiently.

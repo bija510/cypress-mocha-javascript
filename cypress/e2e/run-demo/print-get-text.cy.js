@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe("PrintAndGetTextSuite", function() {
+describe("printAndGetTextSuite", function() {
     it("getPageHeader", function() {
 
         cy.visit('https://naveenautomationlabs.com/opencart/index.php?route=account/register');

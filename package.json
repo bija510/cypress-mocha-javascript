@@ -4,15 +4,15 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "pretest": "npx rimraf allure-results && npx rimraf allure-report",
+        "pretest": "node report-management/prepare-allure.js",
         "test:folder": "npm run pretest && npm run run-folder && npm run posttest",
-        "run-folder": "cypress run --browser=chrome --headed --spec cypress/e2e/run-demo/*.js --reporter mocha-allure-reporter",
+        "run-folder": "cypress run --browser chrome --headed --spec cypress/e2e/page-tests/*.js --env allure=true",
         "test:smoke": "npm run pretest && npm run run-smoke && npm run posttest",
-        "run-smoke": "cypress run --browser chrome --headed --env grep=@smoke --reporter mocha-allure-reporter",
+        "run-smoke": "cypress run --browser chrome --headed --env grep=@smoke ,allure=true",
         "test:regression": "npm run pretest && npm run run:regression && npm run posttest",
-        "run:regression": "cypress run --browser chrome --headed --env grep=@regression --reporter mocha-allure-reporter",
+        "run:regression": "cypress run --browser chrome --headed --env grep=@regression ,allure=true",
         "test:sanity": "npm run pretest && npm run run:sanity && npm run posttest",
-        "run:sanity": "cypress run --browser chrome --headed --env grep=@sanity --reporter mocha-allure-reporter",
+        "run:sanity": "cypress run --browser chrome --headed --env grep=@sanity ,allure=true",
         "posttest": "allure generate allure-results --clean -o allure-report && allure open allure-report"
     },
     "author": "Bija",
@@ -26,13 +26,14 @@
     "devDependencies": {
         "@cypress/grep": "^4.1.0",
         "allure-commandline": "^2.34.0",
+        "allure-cypress": "^3.2.2",
         "cypress": "^14.3.3",
         "cypress-file-upload": "^5.0.8",
         "cypress-iframe": "^1.0.1",
         "cypress-mochawesome-reporter": "^3.8.2",
         "del": "^8.0.0",
+        "fs-extra": "^11.3.0",
         "glob": "^11.0.2",
-        "mocha-allure-reporter": "^1.4.0",
         "mochawesome-merge": "^5.0.0",
         "rimraf": "^6.0.1"
     }

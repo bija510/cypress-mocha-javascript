@@ -1,4 +1,5 @@
 const { defineConfig } = require('cypress')
+const { allureCypress } = require('allure-cypress/reporter');
 
 module.exports = defineConfig({
   defaultCommandTimeout: 20000,
@@ -26,7 +27,14 @@ e2e: {
     supportFile: 'cypress/support/e2e.js',
    
     setupNodeEvents(on, config) {
+       // 🔁 Enable grep support
        require('@cypress/grep/src/plugin')(config)
+
+       // ✅ Enable Allure results
+      allureCypress(on, config, {
+        resultsDir: 'allure-results',
+      });
+
       // Load custom plugin and return config (in case it's modified)
       const maybeModified = require('./cypress/plugins/index.js')(on, config);
       return maybeModified || config;
