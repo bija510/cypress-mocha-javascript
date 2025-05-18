@@ -1,10 +1,10 @@
 # Cypress Automation README
 
-## Introduction
+## 👋 Introduction
 
 Cypress is a modern JavaScript-based end-to-end testing framework designed for fast, easy, and reliable testing of web applications. This document provides guidelines for setting up and using Cypress for automation testing.
 
-### Key Features:
+### ✨ Key Features:
 - Runs headless in the Electron browser by default.
 - The `.text()` feature in Cypress is inherited from the jQuery API.
 - Promises support rejection, resolution, and pending states — use `.then()` to handle them.
@@ -16,37 +16,36 @@ Cypress is a modern JavaScript-based end-to-end testing framework designed for f
 - **Mocha & Chai Support** – Uses familiar testing syntax and BDD/TDD structure.
 
 
-## Languages Supported by Cypress
+## 📜 Languages Supported by Cypress
 
 | Language   | Support Level      | Notes                                                                                 |
 |------------|--------------------|-------------------------------------------------------------------------------------- |
 | JavaScript | ✅ Fully supported | The default and native language of Cypress                                            |
 | TypeScript | ✅ Fully supported | Officially supported with type definitions and support for modern TypeScript features |
 
-## Supported Selectors in Cypress
+## 🔀 Supported Selectors in Cypress
 
 | Selector Type | Support Level            | Notes                                                                 |
 |---------------|--------------------------|-----------------------------------------------------------------------|
 | CSS Selectors | ✅ Fully supported        | Recommended. Cypress supports all standard CSS selectors.            |
 | XPath         | ⚠️ Plugin required        | Not supported out-of-the-box, but can be added via `cypress-xpath`.  |
 
-### 1. To install cypress-xpath
-```sh
-npm install cypress-xpath 
-```
 
+### Using `cypress-xpath` with Cypress
 
-### 2. Add the require line For Cypress v10 and later inside: cypress/support/e2e.js
-```sh
+```js
+# 1. Install
+npm install cypress-xpath
+
+# 2. Configure (Cypress v10+)
+// Add to cypress/support/e2e.js
 require('cypress-xpath');
-```
 
-### 3. Add this in the script.cy.js file for auto-completion IntelliSense support
-```sh
+# 3. Enable IntelliSense
+// Add at the top of your test file (e.g., script.cy.js)
 /// <reference types="cypress-xpath" />
-```
-### 4. Done Example: 
-```javascript
+
+# 4. Example Usage
 cy.xpath("//input[@id='input-firstname']").type('David');
 ```
 
@@ -54,7 +53,7 @@ cy.xpath("//input[@id='input-firstname']").type('David');
 
 This cheat sheet provides a quick reference to standard naming conventions in project to help maintain clean and consistent code.
 
-### 🔠 Naming Conventions Table
+### Naming Conventions Table
 
 | **Element**        | **Convention**      | **Example**                  |
 |--------------------|---------------------|------------------------------|
@@ -76,7 +75,7 @@ This cheat sheet provides a quick reference to standard naming conventions in pr
 - Use **camelCase** for variables, functions, and booleans.
 - Use **UPPER_CASE** for constants that should not change.
 
-## Prerequisites
+## 🧩 Prerequisites
 
 Ensure you have the following installed before proceeding:
 
@@ -106,7 +105,9 @@ Ensure you have the following installed before proceeding:
     }
 ```
 
-### Step 1: Install Scoop
+## 📥 Installation Guide
+
+### Step 1-`Window`: Install Scoop 🥄 
 To install scoop open the `powershell` in window
 ```sh
 irm get.scoop.sh | iex
@@ -115,17 +116,28 @@ After installation, close and reopen powershell, then run:
 ```sh
 scoop help
 ```
+###  Step 1-`Mac`: Install brew 🍺
+To install brew open the `terminal` in macbook
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+After installation, run this command in terminal:
+```sh
+brew help
+```
 
 ### Step 2: Install Node.js
 ```sh
+# 1. Install
 scoop install nodejs
-```
+brew install node 
 
-To confirm Node.js and npm were installed correctly:
-> npm :- used to install, update, and manage JavaScript libraries or tools.
+# 2. To confirm Node.js and npm were installed correctly in `Window` & `Mac`:
+npm used to install, update, and manage JavaScript libraries or tools.
+npx lets you run Node.js packages without installing them globally.
 
-> npx :- npx lets you run Node.js packages without installing them globally.
-```sh
+# 3. To verify instillation in window & mac
 node -v
 npm -v
 npx -v
@@ -136,7 +148,7 @@ To update the Node.js
 scoop update nodejs
 ```
 
-### Step 3: Install Cypress
+### 💾 Step 3: Install Cypress
 
 To install Cypress, navigate to your project directory and run:
 
@@ -208,8 +220,11 @@ describe('My First Test', () => {
   });
 });
 ```
+## ▶️ Running from scripts
+1. Install the plugin `Cypress runner` from vs-code extension
+2. It enable a `run & add only`feature for each and every describe and test block(suites/test)
 
-## Running from command-line
+## ▶️ Running from command-line
 To `run all the tests` use this command default headless:
 
 ```sh
@@ -247,7 +262,7 @@ Run tests in a specific viewport:
 npx cypress run --config viewportWidth=1280,viewportHeight=720
 ```
 
-## Reporting
+## 📊 Reporting
 
 #### A. Install `allure reporter`
 ```sh
@@ -281,7 +296,7 @@ npm run report:allure
 allure open allure-report  
 ```
 
-## To install `mochawesome` & generate reports
+### To install `mochawesome` & generate reports
 
 ```sh
 npm install --save-dev mochawesome
@@ -330,7 +345,7 @@ npm run chromeTest
 npm run recordDashBoardTest
 ```
 
-### `Auto-retries` for failing specs in cypress
+### 🔄 `Auto-retries` for failing specs in cypress
 ```sh
 "retries": {
   "runMode": 1
@@ -376,11 +391,11 @@ npm run test:sanity
 npm run test:regression
 ```
 
-## Screenshots on Failure:
+## 📸 Screenshots on Failure:
 - Cypress **automatically captures screenshots** on test failure.
 - It **creates a `screenshots/` folder** and saves them there.
 
-## Video Recording:
+## ⏺️ Video Recording:
 Add this in the `cypress.config.js` file for video recording of run test cases.
 ```javascript
 module.exports = defineConfig({
@@ -390,7 +405,7 @@ module.exports = defineConfig({
 ```
 Cypress with only this setting `records a video automatically` & save in the **`videos/` folder**.
 
-## Page Object Model (POM)
+## 📄 Page Object Model (POM)
 This project uses the **Page Object Model (POM)** design pattern to organize and maintain test code efficiently.
 - Place `page-objects/` inside the `support/` folder.
 - ⚠️ Do **not** place it in `e2e/` — Cypress will attempt to execute it as a test.
