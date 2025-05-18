@@ -107,23 +107,18 @@ Ensure you have the following installed before proceeding:
 
 ## 📥 Installation Guide
 
-### Step 1-`Window`: Install Scoop 🥄 
+### Step 1a-`Window`: Install Scoop 🥄 
 To install scoop open the `powershell` in window
 ```sh
 irm get.scoop.sh | iex
-```
-After installation, close and reopen powershell, then run:
-```sh
+
 scoop help
 ```
-###  Step 1-`Mac`: Install brew 🍺
+###  Step 1b-`Mac`: Install brew 🍺
 To install brew open the `terminal` in macbook
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
 
-After installation, run this command in terminal:
-```sh
 brew help
 ```
 
@@ -163,13 +158,13 @@ If vulnerabilities
 ```sh
 npm audit fix --force
 ```
-### To install all the `dependencies`
+### Step 4: To install all the `dependencies`
 ```sh
 npm install
 ```
 
 
-### Opening Cypress
+### Step 5: Opening Cypress
 
 After installation, you can open `Cypress Test runner dashboard` using:
 
@@ -183,7 +178,7 @@ node_modules/.bin/cypress open
 ```
 
 
-## Folder Structure
+## 🗂️ Folder Structure
 
 After running Cypress for the first time, a default folder structure is created:
 
@@ -208,7 +203,7 @@ After running Cypress for the first time, a default folder structure is created:
 - **cypress.config.json**: Configuration settings.
 - **package.json**: Manages a Node.js project's metadata, dependencies, scripts, and configuration, serving as the central hub for defining how the project runs, builds, and interacts with other packages.
 
-## Writing Your First Test
+## ✍️ Writing Your First Test
 
 Create a test file in `cypress/e2e/demo.cy.js`:
 
@@ -225,40 +220,27 @@ describe('My First Test', () => {
 2. It enable a `run & add only`feature for each and every describe and test block(suites/test)
 
 ## ▶️ Running from command-line
-To `run all the tests` use this command default headless:
-
 ```sh
+# 1. To `run all the tests` use this command default headless:
 npx cypress run
 npx cypress run --headless
 npx cypress run --headed
-```
-To `stop` a running test suite:
-```sh
-CTRL + C
-Terminate batch job (Y/N)?
-Y + ENTER
-```
 
-To run `single .cy.js` file  `--spec` flag used to run a specific test file 
+# 2. To `stop` a running test suite:
+CTRL + C >> Terminate batch job (Y/N)? >> Y + ENTER
 
-```sh
+# 3. To run `single .cy.js` file  `--spec` flag used to run a specific test file 
 npx cypress run --spec cypress/e2e/page-tests/sign-up.cy.js --headed
-```
 
-To run tests in a specific browser:
-```sh
+# 4. To run tests in a specific browser:
 npx cypress run --spec cypress/e2e/page-tests/sign-up.cy.js --headed --browser chrome
-```
 
-To run tests with environment variables:
-```sh
+# 5. To run tests with environment variables:
 npx cypress run --env username=admin,password=1234
 node_modules/.bin/cypress run --spec cypress/e2e/test-cases/21-run-from-cmd.js --env url=https://www.google.com/ --headed
 npx cypress run --spec cypress/e2e/test-cases/21-run-from-cmd.js --env url=https://www.google.com/ --headed
-```
 
-Run tests in a specific viewport:
-```sh
+# 6. Run tests in a specific viewport:
 npx cypress run --config viewportWidth=1280,viewportHeight=720
 ```
 
@@ -281,7 +263,7 @@ npm run test:smoke
 ```
 
 #### D. Optional: Serve Without Opening 
-> This combines generate and open in one command, but doesn't save the report to a directory.
+This combines generate and open in one command, but doesn't save the report to a directory.
 ```sh
 allure serve allure-results
 ```
@@ -309,7 +291,7 @@ Run tests with reporting:
 npx cypress run --reporter mochawesome
 npx cypress run --reporter mochawesome --spec cypress/e2e/page-tests/sum-of-product-function.js --headed
 ```
-> **Note**: Run from the **terminal** to enable automatic screenshot and video capture.
+`Note:` Run from the **terminal** to enable automatic screenshot and video capture.
 
 ## Custom Commands
 
@@ -408,7 +390,7 @@ Cypress with only this setting `records a video automatically` & save in the **`
 ## 📄 Page Object Model (POM)
 This project uses the **Page Object Model (POM)** design pattern to organize and maintain test code efficiently.
 - Place `page-objects/` inside the `support/` folder.
-- ⚠️ Do **not** place it in `e2e/` — Cypress will attempt to execute it as a test.
+- ⚠️ Do **note** place it in `e2e/` — Cypress will attempt to execute it as a test.
 
 ## Best Practices
 
