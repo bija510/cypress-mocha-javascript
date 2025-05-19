@@ -1,4 +1,4 @@
-name: Smoke Window Env
+name: smoke-tests-windows
 on:
   push:
     branches: [master]
