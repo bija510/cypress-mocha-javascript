@@ -29,12 +29,12 @@ jobs:
       - name: Run Cypress Smoke Tests
         run: npm run test:smoke
 
-      - name: Upload Allure Report
+      - name: Upload Allure Results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report
-          path: allure-report
+          name: allure-results
+          path: allure-results
 
       - name: Upload Mochawesome Report
         if: always()
