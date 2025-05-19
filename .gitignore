@@ -4,3 +4,7 @@ cypress/videos/*
 allure-report/
 allure-results/
 cypress/downloads/*
+mochawesome-report/*
+cypress/reports/*
+mochawesome.json
+.DS_Store
