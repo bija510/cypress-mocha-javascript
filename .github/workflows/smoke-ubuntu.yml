@@ -1,4 +1,4 @@
-name: Cypress Smoke Tests
+name: Smoke Ubuntu Env
 
 on:
   push:
