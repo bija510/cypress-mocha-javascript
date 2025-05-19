@@ -1,4 +1,4 @@
-name: Smoke Ubuntu Env
+name: smoke-tests-ubuntu
 
 on:
   push:
