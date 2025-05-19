@@ -18,7 +18,7 @@ describe('dropDowns', function() {
 
     })
 
-    it('dynamic_dropdown', function() {
+    it.only('dynamic_dropdown', function() {
         cy.get("input[id='autocomplete']").type('ind') // each method auto resolve promise
         cy.get(".ui-menu-item div").each(($ddlLabel, index, $list) => {
 

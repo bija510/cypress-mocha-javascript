@@ -4,16 +4,16 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "pretest": "node report-management/prepare-allure.js",
+        "pretest": "rimraf mochawesome-report cypress/reports mochawesome.json allure-results allure-report",
         "test:folder": "npm run pretest && npm run run-folder && npm run posttest",
         "run-folder": "cypress run --browser chrome --headed --spec cypress/e2e/page-tests/*.js --env allure=true",
         "test:smoke": "npm run pretest && npm run run-smoke && npm run posttest",
-        "run-smoke": "cypress run --browser chrome --headed --env grep=@smoke ,allure=true",
+        "run-smoke": "cypress run --browser chrome --headed --env grep=@smoke,allure=true",
         "test:regression": "npm run pretest && npm run run:regression && npm run posttest",
-        "run:regression": "cypress run --browser chrome --headed --env grep=@regression ,allure=true",
+        "run:regression": "cypress run --browser chrome --headed --env grep=@regression,allure=true",
         "test:sanity": "npm run pretest && npm run run:sanity && npm run posttest",
-        "run:sanity": "cypress run --browser chrome --headed --env grep=@sanity ,allure=true",
-        "posttest": "allure generate allure-results --clean -o allure-report && allure open allure-report"
+        "run:sanity": "cypress run --browser chrome --headed --env grep=@sanity,allure=true",
+        "posttest": "mochawesome-merge cypress/reports/*.json > mochawesome.json && marge mochawesome.json --reportDir mochawesome-report --inline"
     },
     "author": "Bija",
     "license": "ISC",
