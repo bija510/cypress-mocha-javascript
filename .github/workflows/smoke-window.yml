@@ -1,5 +1,4 @@
-name: Cypress Smoke Tests
-
+name: Smoke Window Env
 on:
   push:
     branches: [master]
